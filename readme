@@ -1,0 +1,20 @@
+# set-mtu-persistent
+
+Persistent MTU setter for Ubuntu servers (18.04+).
+
+## Usage
+
+Interactive:
+sudo ./set-mtu-persistent.sh
+
+CLI:
+sudo ./set-mtu-persistent.sh --iface eth0 --mtu 9000
+
+## Features
+- Supports Netplan, NetworkManager, and systemd fallback
+- Applies MTU immediately and persistently after reboot
+- Automatic backups of original config files
+
+## Notes
+- On VPS with cloud-init, configuration files may be reset on reboot. Check provider docs.
+- Typical MTU: 1500 (standard), 9000 (jumbo frames)
