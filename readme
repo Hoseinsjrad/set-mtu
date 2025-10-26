@@ -1,84 +1,21 @@
-<p align="center">
-  <a href="https://github.com/Hoseinsjrad/set-mtu-persistent" target="_blank" rel="noopener noreferrer">
-    <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="https://github.com/Hoseinsjrad/set-mtu-persistent/raw/main/assets/logo-dark.png">
-      <img width="160" height="160" src="https://github.com/Hoseinsjrad/set-mtu-persistent/raw/main/assets/logo-light.png">
-    </picture>
-  </a>
-</p>
+# set-mtu-persistent
 
-<h1 align="center">تنظیم دائمی MTU</h1>
+<p>
+این اسکریپت برای **تنظیم MTU به‌صورت پایدار در سرورهای اوبونتو طراحی شده است.  
+با آن می‌توانید MTU شبکه را فوری تغییر دهید و بعد از ریبوت نیز حفظ شود
 
-<p align="center">
-    اسکریپت تنظیم دائمی MTU برای سرورها و دسکتاپ‌های اوبونتو. پشتیبانی از NetworkManager، Netplan و systemd
-</p>
+---
 
-<br/>
-<p align="center">
-    <a href="#">
-        <img src="https://img.shields.io/github/license/Hoseinsjrad/set-mtu-persistent?style=flat-square" />
-    </a>
-    <a href="https://github.com/Hoseinsjrad/set-mtu-persistent/stargazers">
-        <img src="https://img.shields.io/github/stars/Hoseinsjrad/set-mtu-persistent?style=social" />
-    </a>
-    <a href="https://github.com/Hoseinsjrad/set-mtu-persistent/issues">
-        <img src="https://img.shields.io/github/issues/Hoseinsjrad/set-mtu-persistent?style=flat-square" />
-    </a>
-    <a href="https://github.com/Hoseinsjrad/set-mtu-persistent/releases">
-        <img src="https://img.shields.io/github/v/release/Hoseinsjrad/set-mtu-persistent?style=flat-square" />
-    </a>
-</p>
+## ویژگی‌ها
+- اعمال MTU به صورت **فوری و پایدار**  
+- **بکاپ خودکار** فایل‌های شبکه قبل از تغییر  
+- اجرا با **یک دستور ساده**
 
-<p align="center">
-	<a href="./README.md">
-	English
-	</a>
-	/
-	<a href="./README-fa.md">
-	فارسی
-	</a>
-</p>
+---
 
-<p align="center">
-  <a href="https://github.com/Hoseinsjrad/set-mtu-persistent" target="_blank" rel="noopener noreferrer" >
-    <img src="https://github.com/Hoseinsjrad/set-mtu-persistent/raw/main/assets/preview.png" alt="MTU Script Preview" width="600" height="auto">
-  </a>
-</p>
-
-## فهرست مطالب
-- [بررسی اجمالی](#بررسی-اجمالی)
-  - [امکانات](#امکانات)
-- [راهنمای نصب](#راهنمای-نصب)
-- [نحوه استفاده](#نحوه-استفاده)
-  - [حالت تعاملی](#حالت-تعاملی)
-  - [حالت غیرتعاملی](#حالت-غیرتعاملی)
-- [پشتیبانی از سیستم‌های مختلف](#پشتیبانی-از-سیستم‌های-متفاوت)
-- [رفع اشکال](#رفع-اشکال)
-- [لایسنس](#لایسنس)
-- [مشارکت در توسعه](#مشارکت-در-توسعه)
-
-# بررسی اجمالی
-
-**تنظیم دائمی MTU** اسکریپتی به زبان Bash است که امکان تنظیم دائمی MTU (حداکثر واحد انتقال) را در سرورها و دسکتاپ‌های اوبونتو فراهم می‌کند. این اسکریپت از **NetworkManager**، **Netplan** و **systemd** (به‌عنوان روش جایگزین) پشتیبانی می‌کند و با نسخه‌های مختلف اوبونتو (16.04 به بعد) سازگار است.
-
-اسکریپت به‌طور خودکار سیستم مدیریت شبکه سرور را تشخیص می‌دهد و MTU را به‌صورت فوری و دائمی (حتی پس از ریبوت) اعمال می‌کند. همچنین فایل‌های پشتیبان با برچسب زمانی ایجاد می‌کند و ورودی‌ها را اعتبارسنجی می‌کند.
-
-## امکانات
-
-- ✅ پشتیبانی از **NetworkManager**، **Netplan** و **systemd**
-- ✅ اعمال **فوری** و **دائمی** تغییرات MTU
-- ✅ **اعتبارسنجی** مقادیر MTU (68-9000)
-- ✅ ایجاد **فایل‌های پشتیبان** با برچسب زمانی
-- ✅ **مدیریت خطاها** با پیام‌های واضح
-- ✅ حالت‌های **تعاملی** و **غیرتعاملی**
-- ✅ سازگار با **اوبونتو 16.04+**
-- ✅ **بررسی وجود رابط شبکه**
-
-# راهنمای نصب
-
-## نصب سریع با curl
-
-اسکریپت را مستقیماً از GitHub اجرا کنید:
+## نحوه استفاده
+برای اجرای اسکریپت کافیست یک دستور را وارد کنید:
 
 ```bash
 sudo bash -c "$(curl -fsSL https://raw.githubusercontent.com/Hoseinsjrad/set-mtu-persistent/main/set-mtu-persistent.sh)"
+</p> 
