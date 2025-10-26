@@ -15,34 +15,8 @@ set-mtu-persistent
 
 ✅ مراحل نصب و استفاده سریع
 
-کلون کردن پروژه:
+sudo bash -c "$(curl -fsSL https://raw.githubusercontent.com/Hoseinsjrad/set-mtu-persistent/main/set-mtu-persistent.sh)"
 
-git clone https://github.com/Hoseinsjrad/set-mtu-persistent.git
-cd set-mtu-persistent
-
-
-اجازه اجرای اسکریپت:
-
-chmod +x set-mtu-persistent.sh
-
-
-اجرای اسکریپت (دو روش):
-
-روش تعاملی:
-
-sudo ./set-mtu-persistent.sh
-
-
-اسکریپت اینترفیس شبکه را تشخیص می‌دهد و از شما مقدار MTU می‌خواهد.
-
-روش با پارامتر خط فرمان:
-
-sudo ./set-mtu-persistent.sh --iface eth0 --mtu 9000
-
-
---iface: نام اینترفیس
-
---mtu: مقدار MTU
 
 بررسی MTU اعمال شده:
 
