@@ -1,56 +1,13 @@
-<!DOCTYPE html>
-<html lang="fa">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>set-mtu-persistent</title>
-  <style>
-    body { font-family: Tahoma, sans-serif; line-height: 1.6; background-color: #f9f9f9; padding: 20px; }
-    h1, h2, h3 { color: #333; }
-    pre { background-color: #eee; padding: 10px; border-radius: 5px; overflow-x: auto; }
-    code { font-family: monospace; }
-    .note { background-color: #fffae6; padding: 10px; border-left: 5px solid #ffeb3b; margin: 10px 0; }
-  </style>
-</head>
-<body>
+# set-mtu-persistent
 
-<h1>set-mtu-persistent</h1>
+اسکریپت **تنظیم MTU به‌صورت پایدار** برای اوبونتو (18.04+).
 
-<p>اسکریپت <strong>تنظیم MTU به‌صورت پایدار</strong> برای سرورهای اوبونتو (18.04+). با این اسکریپت می‌توانید MTU رابط شبکه را <strong>هم بلافاصله اعمال و هم بعد از ریبوت حفظ کنید</strong>.</p>
+## ویژگی‌ها
+- پشتیبانی از **NetworkManager**، **Netplan** و **Fallback systemd**
+- اعمال MTU **فوری و پایدار**
+- **بکاپ خودکار** فایل‌های شبکه قبل از تغییر
+- اجرا با **یک دستور ساده**
 
-<h2>ویژگی‌ها</h2>
-<ul>
-  <li>پشتیبانی از <strong>NetworkManager</strong>، <strong>Netplan</strong> و <strong>Fallback systemd</strong></li>
-  <li>اعمال MTU <strong>فوری و پایدار</strong></li>
-  <li><strong>بکاپ خودکار</strong> فایل‌های شبکه قبل از تغییر</li>
-  <li>اجرای آسان با <strong>یک دستور</strong></li>
-</ul>
-
-<h2>نحوه استفاده</h2>
-<p>برای اجرای اسکریپت تنها کافیست یک دستور را در ترمینال وارد کنید:</p>
-
-<pre><code>sudo bash -c "$(curl -fsSL https://raw.githubusercontent.com/Hoseinsjrad/set-mtu-persistent/main/set-mtu-persistent.sh)"</code></pre>
-
-<p>اسکریپت به صورت تعاملی از شما <strong>اینترفیس شبکه</strong> و <strong>مقدار MTU</strong> را می‌پرسد و تغییرات را اعمال می‌کند. همچنین تغییرات بعد از ریبوت نیز حفظ می‌شوند.</p>
-
-<h3>نکات مهم</h3>
-<ul>
-  <li>MTU معمولاً بین 68 تا 9000 است. مقدار استاندارد 1500 و برای Jumbo Frames مقدار 9000 پیشنهاد می‌شود.</li>
-  <li>در سرورهایی که از <strong>cloud-init</strong> استفاده می‌کنند، ممکن است فایل‌های شبکه بازنویسی شوند.</li>
-  <li>تمام فایل‌های پیکربندی اصلی قبل از تغییر <strong>به صورت خودکار بکاپ</strong> گرفته می‌شوند.</li>
-</ul>
-
-<div class="note">
-  توجه: این دستور نیاز به اینترنت دارد و اسکریپت هر بار مستقیماً از GitHub دانلود می‌شود.
-</div>
-
-<h2>بررسی MTU</h2>
-<p>پس از اجرای اسکریپت، می‌توانید مقدار MTU را با دستور زیر بررسی کنید:</p>
-
-<pre><code>ip link show &lt;interface-name&gt;</code></pre>
-
-<h2>لایسنس</h2>
-<p>این پروژه تحت <strong>MIT License</strong> منتشر شده است و استفاده، تغییر و توزیع آن آزاد است.</p>
-
-</body>
-</html>
+## نحوه استفاده
+```bash
+sudo bash -c "$(curl -fsSL https://raw.githubusercontent.com/Hoseinsjrad/set-mtu-persistent/main/set-mtu-persistent.sh)"
